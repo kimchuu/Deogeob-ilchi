@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/drawable/background_circle.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/layout/activity_login.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/layout/activity_splash.xml" value="0.11018518518518519" />
       </map>
     </option>
   </component>
