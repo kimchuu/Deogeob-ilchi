@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="Primary">#4D86F5</color>
-    <color name="PrimaryVariant">#B9CFFB</color>
+    <color name="PrimaryVariant">#B8E9FF</color>
     <color name="Background">#FFFFFF</color>
     <color name="OnBackground">#000000</color>
     <color name="Error">#ff5858</color>
     <color name="ControlHighlight">#92929d</color>
+    <color name="KakaoColor">#FFE812</color>
+    <color name="NaverColor">#5cc33e</color>
 </resources>
