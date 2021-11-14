@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id("org.jlleitschuh.gradle.ktlint") version '10.2.0'
 }
 
 android {
@@ -29,6 +30,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -40,4 +49,21 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // Koin core features
+    implementation "io.insert-koin:koin-core:$koin_version"
+// Koin test features
+    testImplementation "io.insert-koin:koin-test:$koin_version"
+    // Koin main features for Android (Scope,ViewModel ...)
+    implementation "io.insert-koin:koin-android:$koin_version"
+// Koin Java Compatibility
+    implementation "io.insert-koin:koin-android-compat:$koin_version"
+// Koin for Jetpack WorkManager
+    implementation "io.insert-koin:koin-androidx-workmanager:$koin_version"
+// Koin for Navigation Graph
+    implementation "io.insert-koin:koin-androidx-navigation:$koin_version"
+// Koin for Jetpack Compose
+    implementation "io.insert-koin:koin-androidx-compose:$koin_version"
+
+    implementation "io.reactivex.rxjava3:rxjava:$rxjava_version"
 }
