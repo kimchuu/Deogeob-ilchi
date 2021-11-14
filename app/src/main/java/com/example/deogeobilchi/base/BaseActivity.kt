@@ -12,7 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.example.deogeobilchi.R
 
-abstract class BaseActivity: AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity() {
 
     /**
      * DataBinding
@@ -26,8 +26,6 @@ abstract class BaseActivity: AppCompatActivity() {
     fun String.showLongToast() = Toast.makeText(applicationContext, this, Toast.LENGTH_LONG).show()
     fun String.showShortToast() =
         Toast.makeText(applicationContext, this, Toast.LENGTH_SHORT).show()
-
-
 
     /**
      * Start Activity
@@ -60,5 +58,4 @@ abstract class BaseActivity: AppCompatActivity() {
         val keyboard = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
         keyboard.showSoftInput(this, 0)
     }
-
 }

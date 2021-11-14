@@ -9,15 +9,15 @@ import org.koin.core.context.startKoin
 
 class DeogeobilchiApplication : Application() {
 
-    companion object{
-        lateinit var prefs:PreferenceUtil
+    companion object {
+        lateinit var prefs: PreferenceUtil
     }
 
     override fun onCreate() {
         super.onCreate()
 
         prefs = PreferenceUtil(applicationContext)
-        startKoin{
+        startKoin {
             androidLogger()
             androidContext(this@DeogeobilchiApplication)
             modules(viewModelModule)

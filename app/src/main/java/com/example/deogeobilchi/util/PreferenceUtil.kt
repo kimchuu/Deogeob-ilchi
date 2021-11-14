@@ -4,9 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
 
-class PreferenceUtil(context : Context) {
-    private val prefs : SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-    private var editor : SharedPreferences.Editor = prefs.edit()
-
-
+class PreferenceUtil(context: Context) {
+    private val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+    private var editor: SharedPreferences.Editor = prefs.edit()
 }
