@@ -63,4 +63,6 @@ dependencies {
     implementation "io.insert-koin:koin-androidx-navigation:$koin_version"
 // Koin for Jetpack Compose
     implementation "io.insert-koin:koin-androidx-compose:$koin_version"
+
+    implementation "io.reactivex.rxjava3:rxjava:$rxjava_version"
 }
