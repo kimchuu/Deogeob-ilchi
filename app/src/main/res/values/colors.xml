@@ -10,4 +10,6 @@
     <color name="NaverColor">#5cc33e</color>
     <color name="White">#FFFFFF</color>
     <color name="Black">#000000</color>
+    <color name="GrayBackground">#F4F3F3</color>
+    <color name="TextGray">#AFAEAE</color>
 </resources>

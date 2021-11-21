@@ -14,4 +14,24 @@
         <item name="android:fontFamily">@font/poppins_regular</item>
         <item name="android:includeFontPadding">false</item>
     </style>
+    <style name="Roboto.TextStyle" parent="android:TextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/OnBackground</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+    <style name="Roboto.TitleStyle" parent="android:TextAppearance">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/OnBackground</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="Roboto.RadioStyle" parent="android:TextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/OnBackground</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
 </resources>
