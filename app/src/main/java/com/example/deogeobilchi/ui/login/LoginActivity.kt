@@ -1,8 +1,6 @@
 package com.example.deogeobilchi.ui.login
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.databinding.BindingAdapter
 import com.example.deogeobilchi.R
 import com.example.deogeobilchi.base.BaseActivity
 import com.example.deogeobilchi.databinding.ActivityLoginBinding
@@ -13,11 +11,14 @@ class LoginActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.apply { }
+        binding.apply {
+            logo.setOnClickListener {
+                gotoTest()
+            }
+        }
     }
 
-    @BindingAdapter("bind: onClick")
-    fun gotoTest(){
+    fun gotoTest() {
         startActivity<ExamActivity>(this)
     }
 }

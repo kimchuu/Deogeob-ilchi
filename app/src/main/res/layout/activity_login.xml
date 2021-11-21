@@ -3,9 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <variable
-            name="activity"
-            type="com.example.deogeobilchi.ui.login.LoginActivity" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,8 +20,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.35"
-            android:onClick="@{(view) -> activity.gotoTest()}"/>
+            app:layout_constraintVertical_bias="0.35" />
 
         <LinearLayout
             android:id="@+id/kakao_login_btn"

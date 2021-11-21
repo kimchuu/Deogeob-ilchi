@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="isStart"
+            type="Boolean" />
+        <variable
+            name="bottomBarHeight"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingVertical="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/tv_title_exam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exam_title"
+                style="@style/Poppins.TitleStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_exam"
+                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="16dp"
+                android:visibility="@{isStart ? View.VISIBLE : View. GONE}"
+                >
+                <ProgressBar
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/progress_text"
+                    app:layout_constraintBottom_toBottomOf="@id/progress_text"
+                    app:layout_constraintEnd_toStartOf="@id/progress_text"
+                    android:layout_marginRight="32dp"
+                    />
+                <LinearLayout
+                    android:id="@+id/progress_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Poppins.TextStyle"
+                        android:text="5"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Poppins.TextStyle"
+                        android:text="/20"
+                        />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/exam_frame"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_bar"
+            app:layout_constraintBottom_toTopOf="@+id/btn_exam_start"
+            />
+
+        <LinearLayout
+            android:id="@+id/btn_exam_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center"
+            android:paddingVertical="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="24dp"
+            android:background="@color/Primary"
+            android:elevation="6dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exam_start"
+                style="@style/Poppins.TitleStyle"
+                android:textColor="@color/White"
+                />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

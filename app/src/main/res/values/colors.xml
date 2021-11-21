@@ -8,4 +8,6 @@
     <color name="ControlHighlight">#92929d</color>
     <color name="KakaoColor">#FFE812</color>
     <color name="NaverColor">#5cc33e</color>
+    <color name="White">#FFFFFF</color>
+    <color name="Black">#000000</color>
 </resources>

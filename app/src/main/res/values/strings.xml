@@ -3,4 +3,6 @@
     <string name="korean_app_name">덕업일치</string>
     <string name="kakao_login">카카오 로그인</string>
     <string name="naver_login">네이버 로그인</string>
+    <string name="exam_title">청소년 직업 흥미 검사</string>
+    <string name="exam_start">검사 시작하기</string>
 </resources>
