@@ -13,6 +13,11 @@ class ExamActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         binding.apply {
+            isStart = false
+
+            btnExamStart.setOnClickListener {
+                isStart = true
+            }
         }
     }
 }
