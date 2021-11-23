@@ -3,4 +3,17 @@
     <string name="korean_app_name">덕업일치</string>
     <string name="kakao_login">카카오 로그인</string>
     <string name="naver_login">네이버 로그인</string>
+    <string name="exam_title">청소년 직업 흥미 검사</string>
+    <string name="exam_start">검사 시작하기</string>
+    <string name="exam_what_is">청소년 직업 흥미 검사란?</string>
+    <string name="exam_what_text_1">청소년들이 진로를 결정하고 직업 세계를 탐색하는데 도움을 줄 수 있도록 개인의 흥미에 대한 과학적인 분석과
+다양한 직업세계에 대한 폭 넓은 정보를 제공하는 검사입니다.</string>
+    <string name="exam_what_text_2">본 서비스에서는 이 검사를 바탕으로 이루어집니다.
+    서비스를 이용하시려면 검사에 참여해주시길 바랍니다.</string>
+    <string name="exam_source">이 검사는 워크넷 ‘청소년 직업 흥미 검사’를\n바탕으로 만들어졌습니다.</string>
+    <string name="exam_answer_1">매우 그렇다</string>
+    <string name="exam_answer_2">그렇다</string>
+    <string name="exam_answer_3">보통이다</string>
+    <string name="exam_answer_4">아니다</string>
+    <string name="exam_answer_5">매우 아니다</string>
 </resources>

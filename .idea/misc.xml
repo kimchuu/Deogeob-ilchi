@@ -4,11 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/drawable/background_circle.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/drawable/background_circle_primary.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/drawable/ic_arrow_left.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/drawable/ic_arrow_right.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/drawable/ic_kakao.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/drawable/ic_naver.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/drawable/ic_previous.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/drawable/ic_right_arrow.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/drawable/ic_square_circle.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/drawable/radio_button_exam.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/layout/activity_exam.xml" value="0.264" />
         <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/layout/activity_splash.xml" value="0.11018518518518519" />
+        <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/layout/fragment_exam.xml" value="0.4" />
       </map>
     </option>
   </component>
