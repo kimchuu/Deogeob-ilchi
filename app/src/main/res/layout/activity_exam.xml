@@ -8,9 +8,10 @@
         <variable
             name="isStart"
             type="Boolean" />
+
         <variable
-            name="bottomBarHeight"
-            type="String" />
+            name="count"
+            type="int" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -74,7 +75,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         style="@style/Poppins.TextStyle"
-                        android:text="5"
+                        android:text="@{String.valueOf(count)}"
                         />
                     <TextView
                         android:layout_width="wrap_content"
