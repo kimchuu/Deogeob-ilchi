@@ -2,6 +2,7 @@ package com.example.deogeobilchi.ui.exam
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import com.example.deogeobilchi.DeogeobilchiApplication
 import com.example.deogeobilchi.base.BaseViewModel
 
 class ExamViewModel : BaseViewModel() {
@@ -15,22 +16,56 @@ class ExamViewModel : BaseViewModel() {
     var questionS = mutableListOf<String>() // 사회형
     var questionE = mutableListOf<String>() // 진취형
     var questionC = mutableListOf<String>() // 관습형
+    var answerList = mutableListOf<Int>(0, 0, 0, 0, 0, 0)
+    var answerMap = mutableMapOf<Int, Int>()
 
     init {
         setQuestion()
         makeQuestionList()
         question.value = questionList[number.value!! - 1]
-        Log.d(TAG, "question : ${question.value}")
+        setAnswerMap()
     }
+
+    private fun setAnswerMap() {
+        for (i in 1..24) {
+            answerMap[i] = 0
+        }
+    }
+
+    fun updateAnswerMap(num: Int) {
+        answerMap[number.value!!] = num
+        //Log.d(TAG, "updateAnswerMap: answerList = ${answerMap}")
+    }
+
+    fun resultAnswerMap() {
+        answerMap.forEach {
+            answerList[it.value]++
+        }
+
+        //todo copyList로 변경해야함
+        val sortList = answerList
+        sortList[0] = -1 // 아무 응답도 하지 않았을 경우가 0 -> 제외
+        sortList.sortDescending()
+        val indexList = mutableListOf(0, 0, 0)
+        Log.d(TAG, "resultAnswerMap: sortList = ${sortList}")
+        for (i in 0..2) {
+            Log.d(TAG, "resultAnswerMap: ${answerList.indexOf(sortList[i])}")
+            indexList.add(answerList.indexOf(sortList[i]))
+        }
+        //Log.d(TAG, "resultAnswerMap: indexList = ${indexList}")
+    }
+    
 
     fun nextQuestion() {
         number.value = number.value?.plus(1)
-        question.value = questionList[number.value!! - 1]
+        if (number.value!! <= 24) {
+            question.value = questionList[number.value!! - 1]
+        }
     }
 
     fun prevQuestion() {
-        if (number.value!! >= 2) {
-            number.value = number.value?.minus(1)
+        number.value = number.value?.minus(1)
+        if (number.value!! >= 1) {
             question.value = questionList[number.value!! - 1]
         }
     }
@@ -77,4 +112,6 @@ class ExamViewModel : BaseViewModel() {
         questionC.add("서류를 분류하고 정리한다")
         questionC.add("학급비 지출내용을 잘 정리한다")
     }
+
+
 }
