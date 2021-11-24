@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/layout/activity_exam.xml" value="0.33" />
+        <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/layout/fragment_exam.xml" value="0.33" />
         <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/drawable/background_circle.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/drawable/background_circle_primary.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/drawable/ic_arrow_left.xml" value="0.26979166666666665" />
@@ -21,7 +23,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -5,10 +5,11 @@
     <data>
         <variable
             name="number"
-            type="int" />
+            type="String" />
         <variable
             name="question"
             type="String" />
+
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -30,6 +31,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 >
                 <ImageView
+                    android:id="@+id/iv_number"
                     android:layout_width="72dp"
                     android:layout_height="72dp"
                     android:src="@drawable/ic_square_circle"
@@ -53,18 +55,21 @@
                     />
                 <TextView
                     android:id="@+id/tv_question_title"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@{question}"
                     style="@style/Poppins.TitleStyle"
-                    app:layout_constraintStart_toEndOf="@id/tv_question_number"
+                    app:layout_constraintStart_toEndOf="@id/iv_number"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="0.7"
+                    android:layout_marginHorizontal="8dp"
                     />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
+                android:id="@+id/bar_line"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/GrayBackground"
@@ -144,8 +149,8 @@
 
             <RelativeLayout
                 android:id="@+id/back_btn"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:background="@drawable/background_circle_primary"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -153,8 +158,8 @@
                 android:layout_marginBottom="36dp"
                 >
                 <ImageView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:src="@drawable/ic_arrow_back"
                     android:layout_centerInParent="true"
                     />
@@ -162,8 +167,8 @@
 
             <RelativeLayout
                 android:id="@+id/next_btn"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:background="@drawable/background_circle_primary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -171,8 +176,8 @@
                 android:layout_marginBottom="36dp"
                 >
                 <ImageView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:src="@drawable/ic_arrow_next"
                     android:layout_centerInParent="true"
                     />
