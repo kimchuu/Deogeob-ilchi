@@ -3,12 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <import type="android.view.View"/>
         <variable
             name="number"
             type="String" />
         <variable
             name="question"
             type="String" />
+        <variable
+            name="isFinish"
+            type="Boolean" />
 
     </data>
 
@@ -181,6 +185,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="36dp"
+                android:elevation="10dp"
                 >
                 <ImageView
                     android:layout_width="32dp"
@@ -199,12 +204,40 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="36dp"
+                android:elevation="10dp"
+                android:visibility="@{isFinish ? View.GONE : View.VISIBLE}"
                 >
                 <ImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:src="@drawable/ic_arrow_next"
                     android:layout_centerInParent="true"
+                    />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/finish_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangular_background"
+                app:layout_constraintTop_toTopOf="@id/back_btn"
+                app:layout_constraintBottom_toBottomOf="@id/back_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="6dp"
+                android:elevation="10dp"
+                android:visibility="@{isFinish ? View.VISIBLE : View.GONE}"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/finish_text"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textSize="17sp"
+                    android:textColor="@color/White"
+                    android:includeFontPadding="false"
                     />
             </RelativeLayout>
 

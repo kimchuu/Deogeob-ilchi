@@ -16,4 +16,5 @@
     <string name="exam_answer_3">보통이다</string>
     <string name="exam_answer_4">아니다</string>
     <string name="exam_answer_5">매우 아니다</string>
+    <string name="finish_text">완료</string>
 </resources>

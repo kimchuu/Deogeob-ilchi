@@ -2,7 +2,6 @@ package com.example.deogeobilchi.ui.exam
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import com.example.deogeobilchi.DeogeobilchiApplication
 import com.example.deogeobilchi.base.BaseViewModel
 
 class ExamViewModel : BaseViewModel() {
@@ -39,22 +38,28 @@ class ExamViewModel : BaseViewModel() {
 
     fun resultAnswerMap() {
         answerMap.forEach {
-            answerList[it.value]++
+            when (it.key % 6) {
+                1 -> answerList[0] += it.value
+                2 -> answerList[1] += it.value
+                3 -> answerList[2] += it.value
+                4 -> answerList[3] += it.value
+                5 -> answerList[4] += it.value
+                0 -> answerList[5] += it.value
+            }
         }
 
-        //todo copyList로 변경해야함
-        val sortList = answerList
-        sortList[0] = -1 // 아무 응답도 하지 않았을 경우가 0 -> 제외
+        val sortList = mutableListOf<Int>()
+        sortList.addAll(answerList)
         sortList.sortDescending()
         val indexList = mutableListOf(0, 0, 0)
-        Log.d(TAG, "resultAnswerMap: sortList = ${sortList}")
+        Log.d(TAG, "resultAnswerMap: answerList = $answerList")
         for (i in 0..2) {
             Log.d(TAG, "resultAnswerMap: ${answerList.indexOf(sortList[i])}")
-            indexList.add(answerList.indexOf(sortList[i]))
+            val index = answerList.indexOf(sortList[i])
+            indexList.add(index)
+            answerList[index] = -1
         }
-        //Log.d(TAG, "resultAnswerMap: indexList = ${indexList}")
     }
-    
 
     fun nextQuestion() {
         number.value = number.value?.plus(1)
@@ -112,6 +117,4 @@ class ExamViewModel : BaseViewModel() {
         questionC.add("서류를 분류하고 정리한다")
         questionC.add("학급비 지출내용을 잘 정리한다")
     }
-
-
 }

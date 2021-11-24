@@ -3,7 +3,6 @@ package com.example.deogeobilchi.util
 import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
-import com.google.gson.Gson
 
 class PreferenceUtil(context: Context) {
     private val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -16,11 +15,11 @@ class PreferenceUtil(context: Context) {
         prefs.edit().putInt(key, int).commit()
     }
 
-    fun setIntList(key: String, values : MutableList<Int>){
+    fun setIntList(key: String, values: MutableList<Int>) {
         var i = 1
-        if (values.isNotEmpty()){
+        if (values.isNotEmpty()) {
             values.forEach {
-                prefs.edit().putInt(key+i, it)
+                prefs.edit().putInt(key + i, it)
                 i++
             }
         }

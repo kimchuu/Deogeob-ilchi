@@ -1,6 +1,6 @@
 package com.example.deogeobilchi.model
 
-enum class EnumExamType(val type : String) {
+enum class EnumExamType(val type: String) {
     R("현실형"),
     I("탐구형"),
     A("예술형"),
@@ -10,14 +10,14 @@ enum class EnumExamType(val type : String) {
 }
 
 data class ExamTypeDetail(
-    var job : MutableList<String>,
-    var signature : MutableList<String>,
-    var value : MutableList<String>,
-    var activity : MutableList<String>
+    var job: MutableList<String>,
+    var signature: MutableList<String>,
+    var value: MutableList<String>,
+    var activity: MutableList<String>
 )
 
-private fun getTypeDetail(type : EnumExamType){
-    when (type){
+private fun getTypeDetail(type: EnumExamType) {
+    when (type) {
         EnumExamType.R -> ExamType().R
         EnumExamType.I -> ExamType().I
         EnumExamType.A -> ExamType().A
@@ -43,7 +43,7 @@ class ExamType {
     )
 
     var A = ExamTypeDetail(
-        mutableListOf("예술가", "작가","음악가", "화가", "디자이너"),
+        mutableListOf("예술가", "작가", "음악가", "화가", "디자이너"),
         mutableListOf("상상력이 풍부하고 직관적임", "개방적이며 독창적임"),
         mutableListOf("심리적 경험 및 성취", "개방적 신념 체계", "자유목표의 가치"),
         mutableListOf("재능을 가지고 창의적인 작업을 수행하는 활동 선호"),
@@ -69,6 +69,4 @@ class ExamType {
         mutableListOf("사무경제적 성취", "조직이나 제도의 내에서 일하는 것 선호"),
         mutableListOf("고저오딘 기준 내에서 일하고 관례를 정하고 유지하는 활동 선호"),
     )
-
-
 }
