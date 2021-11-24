@@ -6,5 +6,26 @@ import android.preference.PreferenceManager
 
 class PreferenceUtil(context: Context) {
     private val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-    private var editor: SharedPreferences.Editor = prefs.edit()
+
+    fun getInt(key: String, int: Int): Int {
+        return prefs.getInt(key, int)
+    }
+
+    fun setInt(key: String, int: Int) {
+        prefs.edit().putInt(key, int).commit()
+    }
+
+    fun setIntList(key: String, values: MutableList<Int>) {
+        var i = 1
+        if (values.isNotEmpty()) {
+            values.forEach {
+                prefs.edit().putInt(key + i, it)
+                i++
+            }
+        }
+    }
+
+    fun clear() {
+        prefs.edit().clear().apply()
+    }
 }

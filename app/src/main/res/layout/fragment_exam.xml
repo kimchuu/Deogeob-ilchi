@@ -3,12 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <import type="android.view.View"/>
         <variable
             name="number"
-            type="int" />
+            type="String" />
         <variable
             name="question"
             type="String" />
+        <variable
+            name="isFinish"
+            type="Boolean" />
+
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -30,6 +35,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 >
                 <ImageView
+                    android:id="@+id/iv_number"
                     android:layout_width="72dp"
                     android:layout_height="72dp"
                     android:src="@drawable/ic_square_circle"
@@ -53,18 +59,21 @@
                     />
                 <TextView
                     android:id="@+id/tv_question_title"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@{question}"
                     style="@style/Poppins.TitleStyle"
-                    app:layout_constraintStart_toEndOf="@id/tv_question_number"
+                    app:layout_constraintStart_toEndOf="@id/iv_number"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="0.7"
+                    android:layout_marginHorizontal="8dp"
                     />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
+                android:id="@+id/bar_line"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/GrayBackground"
@@ -76,6 +85,7 @@
                 />
 
             <RadioGroup
+                android:id="@+id/radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +93,7 @@
                 app:layout_constraintTop_toBottomOf="@id/question_title_layout"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintVertical_bias="0.3"
-                android:layout_marginStart="16dp"
+                android:layout_marginHorizontal="16dp"
                 >
                 <RadioButton
                     android:id="@+id/radio_btn_1"
@@ -94,7 +104,13 @@
                     android:drawableStart="@drawable/radio_button_exam"
                     android:drawablePadding="16dp"
                     android:button="@null"
-                    android:paddingVertical="6dp"
+                    android:paddingVertical="12dp"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/GrayBackground"
+                    android:layout_marginHorizontal="2dp"
                     />
                 <RadioButton
                     android:id="@+id/radio_btn_2"
@@ -105,7 +121,13 @@
                     android:drawableStart="@drawable/radio_button_exam"
                     android:drawablePadding="16dp"
                     android:button="@null"
-                    android:paddingVertical="6dp"
+                    android:paddingVertical="12dp"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/GrayBackground"
+                    android:layout_marginHorizontal="2dp"
                     />
                 <RadioButton
                     android:id="@+id/radio_btn_3"
@@ -116,7 +138,13 @@
                     android:drawableStart="@drawable/radio_button_exam"
                     android:drawablePadding="16dp"
                     android:button="@null"
-                    android:paddingVertical="6dp"
+                    android:paddingVertical="12dp"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/GrayBackground"
+                    android:layout_marginHorizontal="2dp"
                     />
                 <RadioButton
                     android:id="@+id/radio_btn_4"
@@ -127,7 +155,13 @@
                     android:drawableStart="@drawable/radio_button_exam"
                     android:drawablePadding="16dp"
                     android:button="@null"
-                    android:paddingVertical="6dp"
+                    android:paddingVertical="12dp"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/GrayBackground"
+                    android:layout_marginHorizontal="2dp"
                     />
                 <RadioButton
                     android:id="@+id/radio_btn_5"
@@ -138,23 +172,24 @@
                     android:drawableStart="@drawable/radio_button_exam"
                     android:drawablePadding="16dp"
                     android:button="@null"
-                    android:paddingVertical="6dp"
+                    android:paddingVertical="12dp"
                     />
             </RadioGroup>
 
             <RelativeLayout
                 android:id="@+id/back_btn"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:background="@drawable/background_circle_primary"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="36dp"
+                android:elevation="10dp"
                 >
                 <ImageView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:src="@drawable/ic_arrow_back"
                     android:layout_centerInParent="true"
                     />
@@ -162,19 +197,47 @@
 
             <RelativeLayout
                 android:id="@+id/next_btn"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:background="@drawable/background_circle_primary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="36dp"
+                android:elevation="10dp"
+                android:visibility="@{isFinish ? View.GONE : View.VISIBLE}"
                 >
                 <ImageView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:src="@drawable/ic_arrow_next"
                     android:layout_centerInParent="true"
+                    />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/finish_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangular_background"
+                app:layout_constraintTop_toTopOf="@id/back_btn"
+                app:layout_constraintBottom_toBottomOf="@id/back_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="6dp"
+                android:elevation="10dp"
+                android:visibility="@{isFinish ? View.VISIBLE : View.GONE}"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/finish_text"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textSize="17sp"
+                    android:textColor="@color/White"
+                    android:includeFontPadding="false"
                     />
             </RelativeLayout>
 
