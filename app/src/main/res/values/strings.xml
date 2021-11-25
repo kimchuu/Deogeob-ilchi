@@ -17,4 +17,6 @@
     <string name="exam_answer_4">아니다</string>
     <string name="exam_answer_5">매우 아니다</string>
     <string name="finish_text">완료</string>
+    <string name="exam_finish">검사 결과</string>
+    <string name="goto_main">추천 기업 만나러 가기</string>
 </resources>
