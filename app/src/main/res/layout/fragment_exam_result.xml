@@ -6,6 +6,10 @@
         <variable
             name="jobAdapter"
             type="com.example.deogeobilchi.ui.exam.adapter.JobAdapter" />
+
+        <variable
+            name="resultAdapter"
+            type="com.example.deogeobilchi.ui.exam.adapter.ResultAdapter" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -71,6 +75,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/result_line"
+            android:adapter="@{resultAdapter}"
             />
 
 

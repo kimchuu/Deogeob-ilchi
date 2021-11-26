@@ -16,7 +16,7 @@ class JobAdapter : RecyclerView.Adapter<JobAdapter.ViewHolder>() {
     private val TAG = "TAGexam"
     var list = mutableListOf<EnumExamType>()
 
-    inner class ViewHolder(private val binding: ItemJobExamBinding, val context: Context) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(private val binding: ItemJobExamBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: EnumExamType) {
             val mType: ExamTypeDetail = ExamType().getTypeDetail(item)
             var mJobs = ""
@@ -32,11 +32,10 @@ class JobAdapter : RecyclerView.Adapter<JobAdapter.ViewHolder>() {
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobAdapter.ViewHolder {
-        return ViewHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_job_exam, parent, false), parent.context)
+        return ViewHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_job_exam, parent, false))
     }
 
     override fun onBindViewHolder(holder: JobAdapter.ViewHolder, position: Int) {
-        Log.d(TAG, "onBindViewHolder: position = $position")
         holder.bind(list[position])
     }
 
