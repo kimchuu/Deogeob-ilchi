@@ -12,12 +12,12 @@ import com.example.deogeobilchi.databinding.FragmentExamBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
-class ExamFragment(viewModel: ExamViewModel) : Fragment() {
+class ExamFragment(viewModel: ExamViewModel, examInterface: ExamInterface) : Fragment() {
     private val TAG = "TAGexam"
     private var _binding: FragmentExamBinding ? = null
     private val binding get() = _binding!!
     private val viewModel: ExamViewModel = viewModel
-
+    private val mInterface = examInterface
     private var mChecked = 0
 
     override fun onCreateView(
@@ -66,6 +66,7 @@ class ExamFragment(viewModel: ExamViewModel) : Fragment() {
 
             finishBtn.setOnClickListener {
                 viewModel.resultAnswerMap()
+                mInterface.examFinish()
             }
         }
     }
