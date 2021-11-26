@@ -3,20 +3,22 @@ package com.example.deogeobilchi.ui.exam
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.deogeobilchi.base.BaseViewModel
+import com.example.deogeobilchi.model.EnumExamType
 
 class ExamViewModel : BaseViewModel() {
     private val TAG = "TAGexam"
     var number = MutableLiveData(1)
     var question = MutableLiveData("")
-    var questionList = mutableListOf<String>()
-    var questionR = mutableListOf<String>() // 현실형
-    var questionI = mutableListOf<String>() // 탐구형
-    var questionA = mutableListOf<String>() // 예술형
-    var questionS = mutableListOf<String>() // 사회형
-    var questionE = mutableListOf<String>() // 진취형
-    var questionC = mutableListOf<String>() // 관습형
-    var answerList = mutableListOf<Int>(0, 0, 0, 0, 0, 0)
-    var answerMap = mutableMapOf<Int, Int>()
+    private var questionList = mutableListOf<String>()
+    private var questionR = mutableListOf<String>() // 현실형
+    private var questionI = mutableListOf<String>() // 탐구형
+    private var questionA = mutableListOf<String>() // 예술형
+    private var questionS = mutableListOf<String>() // 사회형
+    private var questionE = mutableListOf<String>() // 진취형
+    private var questionC = mutableListOf<String>() // 관습형
+    private var answerList = mutableListOf<Int>(0, 0, 0, 0, 0, 0)
+    private var answerMap = mutableMapOf<Int, Int>()
+    var resultTypeList = mutableListOf<EnumExamType>()
 
     init {
         setQuestion()
@@ -48,17 +50,42 @@ class ExamViewModel : BaseViewModel() {
             }
         }
 
+        getHighRankIndex()
+    }
+
+    fun getHighRankIndex() {
         val sortList = mutableListOf<Int>()
         sortList.addAll(answerList)
         sortList.sortDescending()
-        val indexList = mutableListOf(0, 0, 0)
-        Log.d(TAG, "resultAnswerMap: answerList = $answerList")
+
+        var indexList = mutableListOf<Int>()
+        Log.d(TAG, "getHighRankIndex: answerList = $answerList")
         for (i in 0..2) {
-            Log.d(TAG, "resultAnswerMap: ${answerList.indexOf(sortList[i])}")
+            Log.d(TAG, "getHighRankIndex: ${answerList.indexOf(sortList[i])}")
             val index = answerList.indexOf(sortList[i])
             indexList.add(index)
             answerList[index] = -1
         }
+
+        getResultTypeList(indexList)
+    }
+
+    fun getResultTypeList(indexList: List<Int>) {
+        Log.d(TAG, "getResultTypeList: indexList = $indexList")
+        var mType: EnumExamType = EnumExamType.R
+        indexList.forEach {
+            when (it) {
+                0 -> mType = EnumExamType.R
+                1 -> mType = EnumExamType.I
+                2 -> mType = EnumExamType.A
+                3 -> mType = EnumExamType.S
+                4 -> mType = EnumExamType.E
+                5 -> mType = EnumExamType.C
+            }
+            resultTypeList.add(mType)
+        }
+
+        Log.d(TAG, "getResultTypeList: $resultTypeList")
     }
 
     fun nextQuestion() {
