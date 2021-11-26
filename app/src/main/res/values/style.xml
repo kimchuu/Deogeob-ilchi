@@ -37,7 +37,7 @@
     </style>
     <style name="Roboto.SmallTextStyle" parent="android:TextAppearance">
         <item name="android:textStyle">normal</item>
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/OnBackground</item>
         <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:includeFontPadding">false</item>

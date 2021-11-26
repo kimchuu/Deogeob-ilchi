@@ -3,7 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="type"
+            type="String" />
+        <variable
+            name="jobs"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,11 +30,12 @@
             android:id="@+id/tv_title_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="탐구형"
+            android:text="@{type}"
             app:layout_constraintStart_toEndOf="@id/iv_dot"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="8dp"
             style="@style/Roboto.TextStyle"
+            android:textSize="14sp"
             android:textStyle="bold"
             />
 
@@ -39,7 +45,7 @@
             style="@style/Roboto.SmallTextStyle"
             app:layout_constraintStart_toEndOf="@id/iv_dot"
             app:layout_constraintTop_toBottomOf="@id/tv_title_type"
-            android:text="물리학자, 의학자, 수학자, 컴퓨터 프로그래머 등"
+            android:text="@{jobs}"
             android:layout_marginStart="6dp"
             android:layout_marginTop="2dp" />
 

@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="jobAdapter"
+            type="com.example.deogeobilchi.ui.exam.adapter.JobAdapter" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -47,7 +49,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/iv_result"
                 android:layout_marginStart="12dp"
                 style="@style/Poppins.TextStyle"
-                android:textSize="13sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -68,7 +70,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/result_line"/>
+            app:layout_constraintTop_toBottomOf="@id/result_line"
+            />
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -96,7 +99,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/iv_recommend"
                 android:layout_marginStart="12dp"
                 style="@style/Poppins.TextStyle"
-                android:textSize="13sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -117,7 +120,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recommend_line"/>
+            app:layout_constraintTop_toBottomOf="@id/recommend_line"
+            android:adapter="@{jobAdapter}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>

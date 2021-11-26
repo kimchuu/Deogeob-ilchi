@@ -1,7 +1,7 @@
 package com.example.deogeobilchi.ui.exam
 
 import android.os.Bundle
-import android.view.View
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.example.deogeobilchi.R
 import com.example.deogeobilchi.base.BaseActivity
@@ -11,7 +11,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class ExamActivity : BaseActivity(), ExamInterface {
     private val TAG = "TAGexam"
     private val binding by binding<ActivityExamBinding>(R.layout.activity_exam)
-    private lateinit var mFragment: ExamFragment
+    private lateinit var examFragment: ExamFragment
+    private lateinit var resultFragment: ExamResultFragment
     private val viewModel: ExamViewModel by viewModel()
     private val mInterface = this
 
@@ -25,10 +26,8 @@ class ExamActivity : BaseActivity(), ExamInterface {
             btnFloatingBar.setOnClickListener {
                 isStart = true
 
-                mFragment = ExamFragment(viewModel, mInterface)
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.exam_frame, mFragment)
-                    .commit()
+                examFragment = ExamFragment(viewModel, mInterface)
+                setFragment(examFragment)
             }
 
             tvTitleExam.setOnClickListener {
@@ -49,14 +48,21 @@ class ExamActivity : BaseActivity(), ExamInterface {
         )
     }
 
+    private fun setFragment(mFragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.exam_frame, mFragment)
+            .commit()
+    }
+
     override fun examFinish() {
+        resultFragment = ExamResultFragment(viewModel)
+        setFragment(resultFragment)
+
         binding.apply {
             isStart = false
             isResult = true
             tvTitleExam.text = applicationContext.getString(R.string.exam_finish)
             tvFloatingBar.text = applicationContext.getString(R.string.goto_main)
-            examFrame.visibility = View.GONE
-            startCardView.visibility = View.GONE
         }
     }
 }

@@ -61,7 +61,6 @@ class ExamViewModel : BaseViewModel() {
         var indexList = mutableListOf<Int>()
         Log.d(TAG, "getHighRankIndex: answerList = $answerList")
         for (i in 0..2) {
-            Log.d(TAG, "getHighRankIndex: ${answerList.indexOf(sortList[i])}")
             val index = answerList.indexOf(sortList[i])
             indexList.add(index)
             answerList[index] = -1

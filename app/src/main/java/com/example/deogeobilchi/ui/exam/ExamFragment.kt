@@ -12,11 +12,11 @@ import com.example.deogeobilchi.databinding.FragmentExamBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
-class ExamFragment(viewModel: ExamViewModel, examInterface: ExamInterface) : Fragment() {
+class ExamFragment(mViewModel: ExamViewModel, examInterface: ExamInterface) : Fragment() {
     private val TAG = "TAGexam"
     private var _binding: FragmentExamBinding ? = null
     private val binding get() = _binding!!
-    private val viewModel: ExamViewModel = viewModel
+    private val viewModel: ExamViewModel = mViewModel
     private val mInterface = examInterface
     private var mChecked = 0
 

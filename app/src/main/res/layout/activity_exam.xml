@@ -105,7 +105,7 @@
             android:elevation="20dp"
             app:cardBackgroundColor="@color/Background"
             app:cardCornerRadius="10dp"
-            android:visibility="@{isStart ? View.GONE : View.VISIBLE}"
+            android:visibility="@{(isStart || isResult) ? View.GONE : View.VISIBLE}"
             >
 
             <androidx.constraintlayout.widget.ConstraintLayout
