@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_type"
+            app:layout_constraintBottom_toBottomOf="@id/tv_type"
+            android:background="@drawable/ic_circle"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="11sp"
+                android:textColor="@color/OnBackground"
+                android:fontFamily="@font/roboto_regular"
+                android:includeFontPadding="false"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="탐구형"
+            android:textSize="13sp"
+            android:textColor="@color/OnBackground"
+            android:fontFamily="@font/roboto_light"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toEndOf="@id/rl_number"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="8dp"
+            android:paddingVertical="4dp"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:layout_constraintStart_toStartOf="@id/rl_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_type"
+            android:background="@color/GrayBackground"
+            />
+
+        <TextView
+            android:id="@+id/tv_feature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feature"
+            app:layout_constraintStart_toStartOf="@id/tv_type"
+            app:layout_constraintTop_toBottomOf="@id/tv_type"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="11.5sp"
+            android:textColor="@color/OnBackground"
+            android:layout_marginTop="6dp"
+            android:includeFontPadding="false"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_feature_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tv_type"
+            app:layout_constraintTop_toBottomOf="@id/tv_feature"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tv_prefer_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/prefer_activity"
+            app:layout_constraintStart_toStartOf="@id/tv_type"
+            app:layout_constraintTop_toBottomOf="@id/rv_feature_list"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="11.5sp"
+            android:textColor="@color/OnBackground"
+            android:layout_marginTop="16dp"
+            android:includeFontPadding="false"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_prefer_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tv_type"
+            app:layout_constraintTop_toBottomOf="@id/tv_prefer_activity"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

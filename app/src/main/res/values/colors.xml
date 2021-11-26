@@ -13,4 +13,5 @@
     <color name="GrayBackground">#F4F3F3</color>
     <color name="TextGray">#AFAEAE</color>
     <color name="transparent">#00000000</color>
+    <color name="DarkGray">#7E7E8A</color>
 </resources>

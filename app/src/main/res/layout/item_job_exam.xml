@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="16dp">
+
+        <ImageView
+            android:id="@+id/iv_dot"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:src="@drawable/ic_dot"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_title_type"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title_type"/>
+
+        <TextView
+            android:id="@+id/tv_title_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="탐구형"
+            app:layout_constraintStart_toEndOf="@id/iv_dot"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="8dp"
+            style="@style/Roboto.TextStyle"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Roboto.SmallTextStyle"
+            app:layout_constraintStart_toEndOf="@id/iv_dot"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_type"
+            android:text="물리학자, 의학자, 수학자, 컴퓨터 프로그래머 등"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="2dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

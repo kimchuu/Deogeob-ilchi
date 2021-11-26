@@ -19,4 +19,8 @@
     <string name="finish_text">완료</string>
     <string name="exam_finish">검사 결과</string>
     <string name="goto_main">추천 기업 만나러 가기</string>
+    <string name="exam_result">당신의 흥미유형 결과</string>
+    <string name="recommend_job">직업 추천</string>
+    <string name="feature">특징</string>
+    <string name="prefer_activity">선호 직업활동</string>
 </resources>
