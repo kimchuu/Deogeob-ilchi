@@ -23,7 +23,7 @@ class ExamActivity : BaseActivity(), ExamInterface {
             isStart = false
             isResult = false
 
-            btnFloatingBar.setOnClickListener {
+            btnStartFloatingBar.setOnClickListener {
                 isStart = true
 
                 examFragment = ExamFragment(viewModel, mInterface)
@@ -50,6 +50,7 @@ class ExamActivity : BaseActivity(), ExamInterface {
 
     private fun setFragment(mFragment: Fragment) {
         supportFragmentManager.beginTransaction()
+            .setCustomAnimations(R.anim.fadein, R.anim.fadeout)
             .replace(R.id.exam_frame, mFragment)
             .commit()
     }
@@ -59,10 +60,8 @@ class ExamActivity : BaseActivity(), ExamInterface {
         setFragment(resultFragment)
 
         binding.apply {
-            isStart = false
             isResult = true
             tvTitleExam.text = applicationContext.getString(R.string.exam_finish)
-            tvFloatingBar.text = applicationContext.getString(R.string.goto_main)
         }
     }
 }

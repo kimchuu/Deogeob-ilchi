@@ -88,15 +88,15 @@ class ExamViewModel : BaseViewModel() {
     }
 
     fun nextQuestion() {
-        number.value = number.value?.plus(1)
-        if (number.value!! <= 24) {
+        if (number.value!! in 1..24) {
+            number.value = number.value?.plus(1)
             question.value = questionList[number.value!! - 1]
         }
     }
 
     fun prevQuestion() {
-        number.value = number.value?.minus(1)
-        if (number.value!! >= 1) {
+        if (number.value!! >= 2) {
+            number.value = number.value?.minus(1)
             question.value = questionList[number.value!! - 1]
         }
     }
