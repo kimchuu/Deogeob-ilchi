@@ -26,4 +26,7 @@
     <string name="search_enterprise">기업 찾기</string>
     <string name="community">커뮤니티</string>
     <string name="mypage">내 정보</string>
+    <string name="search_sentence">유형을 검색하세요.</string>
+    <string name="apply">지원하기</string>
+    <string name="scrap">스크랩</string>
 </resources>
