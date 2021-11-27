@@ -54,7 +54,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_title_exam"
                 android:layout_marginTop="12dp"
                 android:layout_marginHorizontal="16dp"
-                android:visibility="@{isStart ? View.VISIBLE : View. GONE}"
+                android:visibility="@{(isStart &amp;&amp; !isResult) ? View.VISIBLE : View. GONE}"
                 >
                 <ProgressBar
                     android:id="@+id/progress_bar"
@@ -100,12 +100,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title_bar"
-            app:layout_constraintBottom_toTopOf="@id/btn_floating_bar"
+            app:layout_constraintBottom_toTopOf="@id/btn_start_floating_bar"
             android:layout_margin="16dp"
             android:elevation="20dp"
             app:cardBackgroundColor="@color/Background"
             app:cardCornerRadius="10dp"
-            android:visibility="@{isStart ? View.GONE : View.VISIBLE}"
+            android:visibility="@{(isStart || isResult) ? View.GONE : View.VISIBLE}"
             >
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -183,7 +183,7 @@
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
-            android:id="@+id/btn_floating_bar"
+            android:id="@+id/btn_start_floating_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
@@ -191,17 +191,42 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:gravity="center"
             android:paddingVertical="16dp"
-            android:layout_marginHorizontal="16dp"
+            android:layout_marginHorizontal="12dp"
             android:layout_marginBottom="24dp"
             android:background="@color/Primary"
-            android:elevation="6dp"
+            android:elevation="10dp"
             android:visibility="@{isStart ? View.GONE : View.VISIBLE}"
             >
             <TextView
-                android:id="@+id/tv_floating_bar"
+                android:id="@+id/tv_start_floating_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/exam_start"
+                style="@style/Poppins.TitleStyle"
+                android:textColor="@color/White"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_finish_floating_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center"
+            android:paddingVertical="16dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="24dp"
+            android:background="@color/Primary"
+            android:elevation="20dp"
+            android:visibility="@{isResult ? View.VISIBLE : View.GONE}"
+            >
+            <TextView
+                android:id="@+id/tv_finish_floating_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/goto_main"
                 style="@style/Poppins.TitleStyle"
                 android:textColor="@color/White"
                 />
@@ -216,6 +241,7 @@
             app:layout_constraintTop_toBottomOf="@id/title_bar"
             app:layout_constraintBottom_toBottomOf="parent"
             />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

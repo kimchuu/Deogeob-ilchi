@@ -12,11 +12,11 @@ import com.example.deogeobilchi.databinding.FragmentExamBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
-class ExamFragment(viewModel: ExamViewModel, examInterface: ExamInterface) : Fragment() {
+class ExamFragment(mViewModel: ExamViewModel, examInterface: ExamInterface) : Fragment() {
     private val TAG = "TAGexam"
     private var _binding: FragmentExamBinding ? = null
     private val binding get() = _binding!!
-    private val viewModel: ExamViewModel = viewModel
+    private val viewModel: ExamViewModel = mViewModel
     private val mInterface = examInterface
     private var mChecked = 0
 
@@ -38,10 +38,6 @@ class ExamFragment(viewModel: ExamViewModel, examInterface: ExamInterface) : Fra
         binding.apply {
             isFinish = false
 
-            backBtn.setOnClickListener {
-                viewModel.prevQuestion()
-            }
-
             prefs.clear()
             radioGroup.setOnCheckedChangeListener { radioGroup, i ->
                 when (i) {
@@ -51,6 +47,10 @@ class ExamFragment(viewModel: ExamViewModel, examInterface: ExamInterface) : Fra
                     R.id.radio_btn_4 -> mChecked = 4
                     R.id.radio_btn_5 -> mChecked = 5
                 }
+            }
+
+            backBtn.setOnClickListener {
+                viewModel.prevQuestion()
             }
 
             nextBtn.setOnClickListener {

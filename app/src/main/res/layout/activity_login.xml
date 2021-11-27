@@ -22,11 +22,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.35" />
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/kakao_login_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/KakaoColor"
+            android:background="@drawable/rectangular_background"
+            android:backgroundTint="@color/KakaoColor"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="@id/logo"
             app:layout_constraintEnd_toEndOf="@id/logo"
@@ -34,6 +35,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.75"
             android:layout_marginHorizontal="16dp"
+            android:paddingVertical="2dp"
             >
             
             <ImageView
@@ -41,51 +43,75 @@
                 android:layout_height="36dp"
                 android:src="@drawable/ic_kakao"
                 android:padding="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="4dp"
                 />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/kakao_login"
                 android:textSize="14sp"
-                android:textColor="@color/OnBackground"
                 android:gravity="center"
                 android:layout_gravity="center"
+                style="@style/Poppins.TextStyle"
+                android:textColor="#3D1D1C"
+                android:fontFamily="@font/poppins_extra_bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
                 />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/naver_login_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/NaverColor"
+            android:background="@drawable/rectangular_background"
+            android:backgroundTint="@color/NaverColor"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="@id/logo"
             app:layout_constraintEnd_toEndOf="@id/logo"
             app:layout_constraintTop_toBottomOf="@id/kakao_login_btn"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
+            android:paddingVertical="2dp"
             >
 
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/ic_naver"
-                android:padding="8dp"
+                android:padding="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="4dp"
                 />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/naver_login"
-                android:textSize="14sp"
-                android:textColor="@color/Background"
                 android:gravity="center"
                 android:layout_gravity="center"
+                style="@style/Poppins.TextStyle"
+                android:textSize="14sp"
+                android:textColor="@color/White"
+                android:fontFamily="@font/poppins_extra_bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
                 />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
