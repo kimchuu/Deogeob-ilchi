@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer
 import com.example.deogeobilchi.R
 import com.example.deogeobilchi.base.BaseActivity
 import com.example.deogeobilchi.databinding.ActivityExamBinding
+import com.example.deogeobilchi.ui.main.MainActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ExamActivity : BaseActivity(), ExamInterface {
@@ -32,6 +33,10 @@ class ExamActivity : BaseActivity(), ExamInterface {
 
             tvTitleExam.setOnClickListener {
                 examFinish()
+            }
+
+            btnFinishFloatingBar.setOnClickListener {
+                gotoMain()
             }
         }
 
@@ -63,5 +68,9 @@ class ExamActivity : BaseActivity(), ExamInterface {
             isResult = true
             tvTitleExam.text = applicationContext.getString(R.string.exam_finish)
         }
+    }
+
+    fun gotoMain() {
+        startActivity<MainActivity>(this)
     }
 }
