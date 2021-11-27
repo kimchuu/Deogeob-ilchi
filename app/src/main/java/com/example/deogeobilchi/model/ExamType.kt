@@ -11,9 +11,9 @@ enum class EnumExamType(val type: String) {
 
 data class ExamTypeDetail(
     var job: MutableList<String>,
-    var signature: MutableList<String>,
+    var feature: MutableList<String>,
     var value: MutableList<String>,
-    var activity: MutableList<String>
+    var prefer: MutableList<String>
 )
 
 class ExamType {
@@ -30,9 +30,9 @@ class ExamType {
 
     private var R = ExamTypeDetail(
         job = mutableListOf("농업종사자", "경찰관", "소방수", "기술자", "목수", "운동선수"),
-        signature = mutableListOf("실제적이며 단순함", "여러 사람들과 함께 일하는 것보다 혼자 일하는 것을 선호"),
+        feature = mutableListOf("실제적이며 단순함", "여러 사람들과 함께 일하는 것보다 혼자 일하는 것을 선호"),
         value = mutableListOf("전통적 가치", "독립적인 가치", "폐쇄적 신념"),
-        activity = mutableListOf("기계나 도구, 사물을 조작하는 활동", "사람이나 아이디어를 다루는 말보다는 사물을 다루는 일 선호")
+        prefer = mutableListOf("기계나 도구, 사물을 조작하는 활동", "사람이나 아이디어를 다루는 말보다는 사물을 다루는 일 선호")
     )
 
     private var I = ExamTypeDetail(
@@ -67,6 +67,6 @@ class ExamType {
         mutableListOf("사무직 종사자", "사서", "비서"),
         mutableListOf("보수적이고 실용적임", "변화를 싫어하고 안정 추구"),
         mutableListOf("사무경제적 성취", "조직이나 제도의 내에서 일하는 것 선호"),
-        mutableListOf("고저오딘 기준 내에서 일하고 관례를 정하고 유지하는 활동 선호"),
+        mutableListOf("고정된 기준 내에서 일하고 관례를 정하고 유지하는 활동 선호"),
     )
 }
