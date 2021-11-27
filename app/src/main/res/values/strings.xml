@@ -23,4 +23,7 @@
     <string name="recommend_job">직업 추천</string>
     <string name="feature">특징</string>
     <string name="prefer_activity">선호 직업활동</string>
+    <string name="search_enterprise">기업 찾기</string>
+    <string name="community">커뮤니티</string>
+    <string name="mypage">내 정보</string>
 </resources>
