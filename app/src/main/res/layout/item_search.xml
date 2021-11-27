@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        android:elevation="8dp"
+        >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(주)NAVER"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="11sp"
+                android:textColor="@color/DarkGray"
+                android:includeFontPadding="false"
+                android:textStyle="bold"
+                android:padding="2dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[NAVER Cloud] 네이버 프론트엔드 직업체험"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_company"
+                android:paddingVertical="8dp"
+                style="@style/Poppins.SearchStyle"
+                />
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#탐구형 #현실형"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="11.5sp"
+                android:textColor="@color/DarkGray"
+                android:includeFontPadding="false"
+                android:textStyle="bold"
+                android:paddingHorizontal="2dp"
+                />
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="8dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/GrayBackground"
+            app:layout_constraintTop_toBottomOf="@id/title_layout"
+            android:layout_marginTop="18dp"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/line"
+            android:layout_marginTop="10dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="별점 : "
+                style="@style/Poppins.SearchStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:isIndicator="true"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                app:layout_constraintStart_toEndOf="@id/tv_star"
+                app:layout_constraintTop_toTopOf="@id/tv_star"
+                app:layout_constraintBottom_toBottomOf="@id/tv_star" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toStartOf="@id/btn_apply"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:padding="4dp"
+                android:layout_marginEnd="12dp"
+                >
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/selector_heart"
+                    android:layout_gravity="center_vertical"
+                    android:padding="2dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/scrap"
+                    style="@style/Poppins.SearchStyle"
+                    android:textColor="@color/DarkGray"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="2dp"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btn_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/apply"
+                style="@style/Poppins.SearchStyle"
+                android:textColor="@color/Primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

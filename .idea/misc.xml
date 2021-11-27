@@ -3,11 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/drawable-v24/cursor_drawable.xml" value="0.5697916666666667" />
+        <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/drawable-v24/ic_heart_checked.xml" value="0.5697916666666667" />
+        <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/drawable-v24/ic_heart_unchecked.xml" value="0.5697916666666667" />
+        <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/drawable-v24/ic_search.xml" value="0.5697916666666667" />
+        <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/drawable-v24/ic_x.xml" value="0.5697916666666667" />
+        <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/drawable-v24/rectangular_stroke.xml" value="0.5697916666666667" />
+        <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/drawable/background_circle_primary.xml" value="0.5697916666666667" />
         <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/drawable/ic_circle.xml" value="0.561025641025641" />
         <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/drawable/ic_dot.xml" value="0.4192708333333333" />
         <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/drawable/ic_kakao.xml" value="0.561025641025641" />
         <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/drawable/ic_naver.xml" value="0.561025641025641" />
         <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/drawable/rectangular_background.xml" value="0.561025641025641" />
+        <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/drawable/search_background.xml" value="0.5697916666666667" />
+        <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/drawable/selector_heart.xml" value="0.5697916666666667" />
         <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/layout/activity_exam.xml" value="0.25" />
         <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/layout/activity_main.xml" value="0.33" />
@@ -16,9 +25,11 @@
         <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/layout/fragment_exam.xml" value="0.33" />
         <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/layout/fragment_exam_result.xml" value="0.403125" />
         <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/layout/fragment_mypage.xml" value="0.38333333333333336" />
+        <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/layout/fragment_search.xml" value="0.5" />
         <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/layout/fragment_search_enterprise.xml" value="0.33" />
         <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/layout/item_job_exam.xml" value="0.403125" />
         <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/layout/item_result_exam.xml" value="0.5" />
+        <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/layout/item_search.xml" value="0.5" />
         <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/layout/item_text_exam.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/Miner_Android/Desktop/Deogeob-ilchi/app/src/main/res/menu/bottom_navigation_menu_main.xml" value="0.38333333333333336" />
         <entry key="..\:/Users/mindo/Deogeobilchi/app/src/main/res/drawable/background_circle.xml" value="0.26979166666666665" />
