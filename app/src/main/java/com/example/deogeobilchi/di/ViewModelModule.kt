@@ -2,7 +2,7 @@ package com.example.deogeobilchi.di
 
 import org.koin.androidx.viewmodel.dsl.viewModel
 import com.example.deogeobilchi.ui.exam.ExamViewModel
-import com.example.deogeobilchi.ui.main.search.SearchViewModel
+import com.example.deogeobilchi.ui.main.MainViewModel
 import org.koin.dsl.module
 
 val viewModelModule = module {
@@ -10,6 +10,6 @@ val viewModelModule = module {
         ExamViewModel()
     }
     viewModel {
-        SearchViewModel(workRepository = get())
+        MainViewModel(workRepository = get())
     }
 }

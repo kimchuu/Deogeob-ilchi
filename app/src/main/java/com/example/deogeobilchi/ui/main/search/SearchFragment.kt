@@ -7,15 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.deogeobilchi.databinding.FragmentSearchBinding
-import com.example.deogeobilchi.ui.main.adapter.SearchAdapter
+import com.example.deogeobilchi.ui.main.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SearchFragment : Fragment() {
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
     private lateinit var mSearchAdapter: SearchAdapter
-    private val viewModel: SearchViewModel by sharedViewModel()
+    private val viewModel: MainViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,7 +28,7 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.setData()
+        viewModel.setWorkData()
         mSearchAdapter = SearchAdapter()
         mSearchAdapter.list = viewModel.companyList
 
