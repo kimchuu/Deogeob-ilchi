@@ -1,6 +1,7 @@
 package com.example.deogeobilchi
 
 import android.app.Application
+import com.example.deogeobilchi.di.roomModule
 import com.example.deogeobilchi.di.viewModelModule
 import com.example.deogeobilchi.util.PreferenceUtil
 import org.koin.android.ext.koin.androidContext
@@ -20,7 +21,7 @@ class DeogeobilchiApplication : Application() {
         startKoin {
             androidLogger()
             androidContext(this@DeogeobilchiApplication)
-            modules(viewModelModule)
+            modules(listOf(viewModelModule, roomModule))
         }
     }
 }

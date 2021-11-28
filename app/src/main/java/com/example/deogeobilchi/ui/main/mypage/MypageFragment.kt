@@ -1,4 +1,4 @@
-package com.example.deogeobilchi.ui.main
+package com.example.deogeobilchi.ui.main.mypage
 
 import android.os.Bundle
 import android.view.LayoutInflater

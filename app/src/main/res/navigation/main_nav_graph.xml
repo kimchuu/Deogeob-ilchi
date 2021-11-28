@@ -7,20 +7,20 @@
 
     <fragment
         android:id="@+id/search_enterprise"
-        android:name="com.example.deogeobilchi.ui.main.SearchFragment"
+        android:name="com.example.deogeobilchi.ui.main.search.SearchFragment"
         android:label="SearchFragment"
         tools:layout="@layout/fragment_search"/>
 
     <fragment
         android:id="@+id/community"
-        android:name="com.example.deogeobilchi.ui.main.CommunityFragment"
+        android:name="com.example.deogeobilchi.ui.main.community.CommunityFragment"
         android:label="CommunityFragment"
         tools:layout="@layout/fragment_community"
         />
 
     <fragment
         android:id="@+id/mypage"
-        android:name="com.example.deogeobilchi.ui.main.MypageFragment"
+        android:name="com.example.deogeobilchi.ui.main.mypage.MypageFragment"
         android:label="MypageFragment"
         tools:layout="@layout/fragment_mypage"
         />

@@ -98,4 +98,10 @@ dependencies {
 
     // coroutine
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+
+    // make flow to livedata
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+
+    //Coroutine View Model Scope.
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0"
 }

@@ -1,14 +1,14 @@
-package com.example.deogeobilchi.ui.main
+package com.example.deogeobilchi.ui.main.community
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.deogeobilchi.databinding.FragmentSearchBinding
+import com.example.deogeobilchi.databinding.FragmentCommunityBinding
 
-class SearchFragment : Fragment() {
-    private var _binding: FragmentSearchBinding? = null
+class CommunityFragment : Fragment() {
+    private var _binding: FragmentCommunityBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -16,7 +16,7 @@ class SearchFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSearchBinding.inflate(inflater, container, false)
+        _binding = FragmentCommunityBinding.inflate(inflater, container, false)
         return binding.root
     }
 }
