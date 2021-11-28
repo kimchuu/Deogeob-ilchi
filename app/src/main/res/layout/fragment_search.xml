@@ -3,13 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="adapter"
+            type="com.example.deogeobilchi.ui.main.adapter.SearchAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/DarkGray">
+        android:background="@color/GrayBackground">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/search_layout"
@@ -24,13 +26,13 @@
                 android:id="@+id/iv_search"
                 android:layout_width="36dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_search"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/et_search"
                 app:layout_constraintBottom_toBottomOf="@id/et_search"
                 android:paddingHorizontal="8dp"
                 android:layout_marginStart="4dp"
-                />
+                app:tint="@color/Primary"
+                android:src="@drawable/ic_search"/>
 
             <EditText
                 android:id="@+id/et_search"
@@ -42,7 +44,7 @@
                 android:inputType="text"
                 android:includeFontPadding="false"
                 android:textCursorDrawable="@drawable/cursor_drawable"
-                android:textSize="12sp"
+                android:textSize="13sp"
                 android:textColor="@color/OnBackground"
                 android:textColorHint="@color/TextGray"
                 android:fontFamily="@font/roboto_regular"
@@ -50,18 +52,21 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_search"
+                app:layout_constraintEnd_toStartOf="@id/btn_cancel"
                 android:paddingVertical="8dp"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="2dp"
                 />
             
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_x"
+                android:id="@+id/btn_cancel"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_cancel"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:padding="8dp"
+                android:layout_marginEnd="4dp"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -73,6 +78,7 @@
             app:layout_constraintTop_toBottomOf="@id/search_layout"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginVertical="16dp"
+            android:adapter="@{adapter}"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
