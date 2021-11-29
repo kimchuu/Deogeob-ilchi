@@ -24,13 +24,12 @@ class MainActivity : BaseActivity() {
 
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             binding.where =
-                when (destination.id){
+                when (destination.id) {
                     R.id.search_enterprise -> applicationContext.getString(R.string.search_enterprise)
                     R.id.community -> applicationContext.getString(R.string.community)
                     R.id.mypage -> applicationContext.getString(R.string.mypage)
                     else -> applicationContext.getString(R.string.app_name)
                 }
         }
-
     }
 }
