@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="where"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,7 +29,7 @@
             android:id="@+id/tv_title_exam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/search_enterprise"
+            android:text="@{where}"
             style="@style/Poppins.TitleStyle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

@@ -16,7 +16,7 @@ class SearchAdapter : RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
             binding.apply {
                 company = item.company
                 work = item.work
-                type = item.type.type
+                type = "#" + item.type.type
                 ivCompany.setImageResource(item.image)
                 star = item.star
                 ivHeart.isSelected = item.isLike
