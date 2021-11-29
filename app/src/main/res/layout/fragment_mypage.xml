@@ -27,7 +27,7 @@
                 android:id="@+id/iv_profile"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
-                android:src="@drawable/ic_profile"
+                android:src="@drawable/user_gray"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:tint="@color/TextGray" />

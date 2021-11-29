@@ -11,18 +11,19 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class DetailActivity : BaseActivity() {
     private val binding by binding<ActivityDetailBinding>(R.layout.activity_detail)
     private lateinit var detailFragment: DetailFragment
+    private lateinit var resumeFragment: ResumeFragment
     private val viewModel : DetailViewModel by viewModel()
-    private var mWhere = "상세정보"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         detailFragment = DetailFragment(viewModel)
+        resumeFragment = ResumeFragment()
 
         getExtra("work")
 
         binding.apply {
-            where = mWhere
+            where = "상세정보"
             setFragment(detailFragment)
             isApply = false
             floatingText = applicationContext.getString(R.string.apply)
@@ -30,6 +31,8 @@ class DetailActivity : BaseActivity() {
             btnApplyFloatingBar.setOnClickListener {
                 isApply = true
                 floatingText = applicationContext.getString(R.string.summit)
+                where = "이력서 관리"
+                setFragment(resumeFragment)
             }
 
             btnSummitFloatingBar.setOnClickListener {
