@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.deogeobilchi.DeogeobilchiApplication.Companion.prefs
+import com.example.deogeobilchi.R
 import com.example.deogeobilchi.databinding.FragmentMypageBinding
 import com.example.deogeobilchi.ui.detail.DetailActivity
+import com.example.deogeobilchi.ui.main.search.SearchFragment
 
 class MypageFragment : Fragment() {
     private var _binding: FragmentMypageBinding? = null
@@ -28,9 +30,13 @@ class MypageFragment : Fragment() {
         binding.apply {
             type = "#" + prefs.getString("myType")
 
-            resumeBtn.setOnClickListener {
-
+            scrapBtn.setOnClickListener {
+                Intent(context, DetailMypageActivity::class.java).apply {
+                    putExtra("mypage", "scrap")
+                    startActivity(this)
+                }
             }
         }
     }
+
 }

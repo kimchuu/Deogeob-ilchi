@@ -6,14 +6,17 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.deogeobilchi.R
 import com.example.deogeobilchi.base.BaseActivity
 import com.example.deogeobilchi.databinding.ActivityMainBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity() {
     private val binding by binding<ActivityMainBinding>(R.layout.activity_main)
+    private val viewModel: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.apply { }
         setBottomNav()
+        viewModel.setWorkData()
     }
 
     private fun setBottomNav() {

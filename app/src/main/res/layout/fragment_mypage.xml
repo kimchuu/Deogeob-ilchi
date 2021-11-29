@@ -3,15 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <import type="android.view.View"/>
         <variable
             name="type"
             type="String" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -257,10 +254,5 @@
 
     </LinearLayout>
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/mypage_frame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
