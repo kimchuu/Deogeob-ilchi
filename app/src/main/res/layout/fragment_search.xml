@@ -6,6 +6,9 @@
         <variable
             name="adapter"
             type="com.example.deogeobilchi.ui.main.search.SearchAdapter" />
+        <variable
+            name="search"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,6 +58,7 @@
                 app:layout_constraintEnd_toStartOf="@id/btn_cancel"
                 android:paddingVertical="8dp"
                 android:layout_marginStart="2dp"
+                android:text="@{search}"
                 />
             
             <ImageView

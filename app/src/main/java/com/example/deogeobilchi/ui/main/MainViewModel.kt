@@ -16,6 +16,13 @@ class MainViewModel(
     var companyList = mutableListOf<WorkModel>()
     var communityList = mutableListOf<CommunityModel>()
 
+    fun updateLike(isUpdate : Boolean, work: WorkModel){
+        val workModel = WorkModel(work.id, work.company, work.work, work.type, work.image, work.star, isLike = isUpdate, work.isApply)
+        viewModelScope.launch {
+            workRepository.update(workModel)
+        }
+    }
+
     fun setWorkData() {
         addWorkData("(주)NAVER", "[NAVER Cloud] 네이버 프론트엔드 직업체험", R.drawable.naver_image)
         addWorkData("(주)카카오뱅크", "[뉴플랫폼기술] 클라우드 엔지니어", R.drawable.kakao_bank)

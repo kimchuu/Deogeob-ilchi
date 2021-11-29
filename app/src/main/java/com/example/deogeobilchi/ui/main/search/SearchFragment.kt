@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.deogeobilchi.DeogeobilchiApplication.Companion.prefs
 import com.example.deogeobilchi.databinding.FragmentSearchBinding
 import com.example.deogeobilchi.model.WorkModel
 import com.example.deogeobilchi.ui.detail.DetailActivity
@@ -33,10 +34,15 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.setWorkData()
-        mSearchAdapter = SearchAdapter(gotoDetail = { work ->
+        mSearchAdapter = SearchAdapter(
+            gotoDetail = { work ->
                 Intent(context, DetailActivity::class.java).apply {
                     putExtra("work", work)
-                }.apply { startActivity(this) }
+                    startActivity(this)
+                }
+            },
+            updateScrap = { isUpdate, work ->
+                viewModel.updateLike(isUpdate, work)
             }
         )
         mSearchAdapter.list = viewModel.companyList
@@ -46,6 +52,7 @@ class SearchFragment : Fragment() {
             rvSearch.apply {
                 layoutManager = LinearLayoutManager(context)
             }
+            search = prefs.getString("myType")
         }
     }
 

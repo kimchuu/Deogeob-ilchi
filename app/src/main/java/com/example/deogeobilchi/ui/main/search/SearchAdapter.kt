@@ -1,5 +1,6 @@
 package com.example.deogeobilchi.ui.main.search
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -8,7 +9,7 @@ import com.example.deogeobilchi.R
 import com.example.deogeobilchi.databinding.ItemSearchBinding
 import com.example.deogeobilchi.model.WorkModel
 
-class SearchAdapter(val gotoDetail: (WorkModel)-> Unit) : RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
+class SearchAdapter(val gotoDetail: (WorkModel)-> Unit, val updateScrap: (Boolean, WorkModel) -> Unit) : RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
     var list = mutableListOf<WorkModel>()
 
     inner class ViewHolder(private val binding: ItemSearchBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -26,6 +27,11 @@ class SearchAdapter(val gotoDetail: (WorkModel)-> Unit) : RecyclerView.Adapter<S
                     if (pos != RecyclerView.NO_POSITION){
                         gotoDetail(item)
                     }
+                }
+
+                btnScrap.setOnClickListener {
+                    ivHeart.isSelected = !ivHeart.isSelected
+                    updateScrap(ivHeart.isSelected, item)
                 }
             }
 

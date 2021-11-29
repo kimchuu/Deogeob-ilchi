@@ -135,6 +135,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/tv_star" />
 
             <LinearLayout
+                android:id="@+id/btn_scrap"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
