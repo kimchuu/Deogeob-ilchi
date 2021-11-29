@@ -27,10 +27,10 @@
                 android:id="@+id/iv_profile"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
-                android:src="@drawable/ic_profile"
+                android:src="@drawable/user_gray"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/DarkGray" />
+                app:tint="@color/TextGray" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -92,7 +92,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="16dp"
             android:background="@color/GrayBackground"/>
 
         <LinearLayout

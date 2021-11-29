@@ -8,11 +8,12 @@ import com.example.deogeobilchi.R
 import com.example.deogeobilchi.databinding.ItemSearchBinding
 import com.example.deogeobilchi.model.WorkModel
 
-class SearchAdapter : RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
+class SearchAdapter(val gotoDetail: (WorkModel)-> Unit) : RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
     var list = mutableListOf<WorkModel>()
 
     inner class ViewHolder(private val binding: ItemSearchBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: WorkModel) {
+            var pos = adapterPosition
             binding.apply {
                 company = item.company
                 work = item.work
@@ -20,7 +21,14 @@ class SearchAdapter : RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
                 ivCompany.setImageResource(item.image)
                 star = item.star
                 ivHeart.isSelected = item.isLike
+
+                root.setOnClickListener {
+                    if (pos != RecyclerView.NO_POSITION){
+                        gotoDetail(item)
+                    }
+                }
             }
+
         }
     }
 
