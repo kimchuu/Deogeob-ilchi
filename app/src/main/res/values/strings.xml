@@ -28,6 +28,7 @@
     <string name="mypage">내 정보</string>
     <string name="search_sentence">유형을 검색하세요.</string>
     <string name="apply">지원하기</string>
+    <string name="summit">제출하기</string>
     <string name="scrap">스크랩</string>
     <string name="notice">[공지] 자유로운 대화를 나누어 보세요!</string>
 </resources>

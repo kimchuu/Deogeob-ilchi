@@ -2,6 +2,7 @@ package com.example.deogeobilchi.ui.exam
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import com.example.deogeobilchi.DeogeobilchiApplication.Companion.prefs
 import com.example.deogeobilchi.base.BaseViewModel
 import com.example.deogeobilchi.model.EnumExamType
 
@@ -84,6 +85,7 @@ class ExamViewModel : BaseViewModel() {
             resultTypeList.add(mType)
         }
 
+        prefs.setString("myType", resultTypeList[0].type)
         Log.d(TAG, "getResultTypeList: $resultTypeList")
     }
 
