@@ -5,12 +5,17 @@ import androidx.fragment.app.Fragment
 import com.example.deogeobilchi.R
 import com.example.deogeobilchi.base.BaseActivity
 import com.example.deogeobilchi.databinding.ActivityDetailMypageBinding
+import com.example.deogeobilchi.ui.detail.ResumeFragment
+import com.example.deogeobilchi.ui.exam.ExamResultFragment
+import com.example.deogeobilchi.ui.exam.ExamViewModel
 import com.example.deogeobilchi.ui.main.search.SearchFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailMypageActivity : BaseActivity() {
     private val binding by binding<ActivityDetailMypageBinding>(R.layout.activity_detail_mypage)
     private var mWhere = ""
     private lateinit var mFragment: Fragment
+    private val examViewModel: ExamViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +29,22 @@ class DetailMypageActivity : BaseActivity() {
         when(mWhere){
             "scrap" -> {
                 binding.where = "스크랩한 기업"
+                mFragment = SearchFragment()
+            }
+            "resume" -> {
+                binding.where = "이력서 관리"
+                mFragment = ResumeFragment()
+            }
+            "examResult" -> {
+                binding.where = "검사 결과"
+                mFragment = ExamResultFragment(examViewModel)
+            }
+            "applied" -> {
+                binding.where = "지원한 기업"
+                mFragment = SearchFragment()
+            }
+            "finished" -> {
+                binding.where = "체험완료한 기업"
                 mFragment = SearchFragment()
             }
         }

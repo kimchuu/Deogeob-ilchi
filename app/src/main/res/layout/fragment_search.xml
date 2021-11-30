@@ -3,12 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <import type="android.view.View"/>
         <variable
             name="adapter"
             type="com.example.deogeobilchi.ui.main.search.SearchAdapter" />
         <variable
             name="search"
             type="String" />
+        <variable
+            name="isData"
+            type="Boolean" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -83,6 +87,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginVertical="16dp"
             android:adapter="@{adapter}"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not yet"
+            style="@style/Poppins.TitleStyle"
+            android:textSize="28sp"
+            android:textColor="@color/TextGray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="@{isData ? View.GONE : View.VISIBLE}"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

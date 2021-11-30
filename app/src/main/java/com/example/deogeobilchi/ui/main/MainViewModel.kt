@@ -52,7 +52,7 @@ class MainViewModel(
 
     private fun addWorkData(company: String, work: String, image: Int) {
         var id = company + "_" + work
-        var mWorkModel = WorkModel(id, company, work, EnumExamType.R, image, 5, false)
+        var mWorkModel = WorkModel(id, company, work, EnumExamType.I, image, 5, false)
         companyList.add(mWorkModel)
 
         viewModelScope.launch {
