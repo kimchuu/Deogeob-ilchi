@@ -41,16 +41,23 @@ class ExamViewModel : BaseViewModel() {
 
     fun resultAnswerMap() {
         answerMap.forEach {
+            var score : Int
+            if (it.value != 0){
+                score = 6 - it.value
+            }else {
+                score = 0
+            }
+
             when (it.key % 6) {
-                1 -> answerList[0] += it.value
-                2 -> answerList[1] += it.value
-                3 -> answerList[2] += it.value
-                4 -> answerList[3] += it.value
-                5 -> answerList[4] += it.value
-                0 -> answerList[5] += it.value
+                1 -> answerList[0] += score
+                2 -> answerList[1] += score
+                3 -> answerList[2] += score
+                4 -> answerList[3] += score
+                5 -> answerList[4] += score
+                6 -> answerList[5] += score
             }
         }
-
+        Log.d(TAG, "resultAnswerMap: ${answerMap}")
         getHighRankIndex()
     }
 
@@ -85,8 +92,11 @@ class ExamViewModel : BaseViewModel() {
             resultTypeList.add(mType)
         }
 
-        prefs.setString("myType", resultTypeList[0].type)
-        Log.d(TAG, "getResultTypeList: $resultTypeList")
+        Log.d(TAG, "getResultTypeList: ${resultTypeList}")
+
+        prefs.setStringList("myType", resultTypeList)
+
+        //Log.d("TAGsearch", "getResultTypeList: ${prefs.getStringList("myType")}")
     }
 
     fun nextQuestion() {

@@ -26,7 +26,7 @@ class JobAdapter : RecyclerView.Adapter<JobAdapter.ViewHolder>() {
                 }
                 jobs = mJobs + "등"
 
-                Log.d(TAG, "bind: type = $type, jobs = $mJobs")
+                // Log.d(TAG, "bind: type = $type, jobs = $mJobs")
             }
         }
     }

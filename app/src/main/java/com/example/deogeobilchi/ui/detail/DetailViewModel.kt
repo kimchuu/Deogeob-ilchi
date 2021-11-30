@@ -1,9 +1,13 @@
 package com.example.deogeobilchi.ui.detail
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
 import com.example.deogeobilchi.base.BaseViewModel
 import com.example.deogeobilchi.data.work.WorkRepositoryImpl
 import com.example.deogeobilchi.model.WorkDetailModel
 import com.example.deogeobilchi.model.WorkModel
+import kotlinx.coroutines.launch
 
 class DetailViewModel(
     private val workRepository: WorkRepositoryImpl
@@ -11,6 +15,7 @@ class DetailViewModel(
     lateinit var work : WorkModel
     lateinit var workDetail : WorkDetailModel
     var workDetails = mutableListOf<WorkDetailModel>()
+    val works: LiveData<MutableList<WorkModel>> = workRepository.getAllData().asLiveData()
 
     init {
         setWorkDetails()
@@ -20,8 +25,8 @@ class DetailViewModel(
         workDetail = workDetails.find {
             it.company == work.company
         }!! // 예외처리 해야함
-
     }
+
 
     fun setWorkDetails(){
         var mDetail =  WorkDetailModel("(주)NAVER", "대기업", "1999년 6월 2일", "4조 1266억 2931만원")
@@ -32,5 +37,13 @@ class DetailViewModel(
 
         mDetail =  WorkDetailModel("(주)당근마켓", "스타트업", "2015년 6월 15일", "-")
         workDetails.add(2, mDetail)
+    }
+
+    fun updateWork(){
+        val workModel = work
+        workModel.isApply = true
+        viewModelScope.launch {
+            workRepository.update(workModel)
+        }
     }
 }

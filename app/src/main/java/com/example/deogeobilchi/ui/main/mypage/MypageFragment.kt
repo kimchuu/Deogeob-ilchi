@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.deogeobilchi.DeogeobilchiApplication.Companion.prefs
 import com.example.deogeobilchi.R
 import com.example.deogeobilchi.databinding.FragmentMypageBinding
+import com.example.deogeobilchi.model.EnumExamType
 import com.example.deogeobilchi.ui.detail.DetailActivity
 import com.example.deogeobilchi.ui.main.search.SearchFragment
 
@@ -28,14 +29,37 @@ class MypageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            type = "#" + prefs.getString("myType")
+            if (prefs.getStringList("myType") != null) {
+                val firstType: EnumExamType = prefs.getStringList("myType")!![0]
+                type = "# " + firstType.type
+            }
 
             scrapBtn.setOnClickListener {
-                Intent(context, DetailMypageActivity::class.java).apply {
-                    putExtra("mypage", "scrap")
-                    startActivity(this)
-                }
+                gotoDetail("scrap")
             }
+
+            resumeBtn.setOnClickListener{
+                gotoDetail("resume")
+            }
+
+            examResultBtn.setOnClickListener {
+                gotoDetail("examResult")
+            }
+
+            appliedBtn.setOnClickListener {
+                gotoDetail("applied")
+            }
+
+            finishedBtn.setOnClickListener {
+                gotoDetail("finished")
+            }
+        }
+    }
+
+    private fun gotoDetail(value : String){
+        Intent(context, DetailMypageActivity::class.java).apply {
+            putExtra("mypage", value)
+            startActivity(this)
         }
     }
 

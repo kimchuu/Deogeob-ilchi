@@ -37,6 +37,7 @@ class DetailActivity : BaseActivity() {
             }
 
             btnSummitFloatingBar.setOnClickListener {
+                viewModel.updateWork()
                 "제출이 완료되었습니다".showLongToast()
                 finish()
             }

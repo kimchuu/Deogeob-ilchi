@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.deogeobilchi.DeogeobilchiApplication.Companion.prefs
 import com.example.deogeobilchi.databinding.FragmentSearchBinding
+import com.example.deogeobilchi.model.EnumExamType
 import com.example.deogeobilchi.model.WorkModel
 import com.example.deogeobilchi.ui.detail.DetailActivity
 import com.example.deogeobilchi.ui.main.MainViewModel
@@ -19,6 +20,7 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import java.util.Collections.list
 
 class SearchFragment : Fragment() {
+    private val TAG = "TAGsearch"
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
     private lateinit var mSearchAdapter: SearchAdapter
@@ -57,11 +59,17 @@ class SearchFragment : Fragment() {
         }
 
         if (this.arguments != null){
+            binding.searchLayout.visibility = View.GONE
+
             if (this.requireArguments().getString("mypage") == "scrap") {
-                where = "MYPAGE"
-                binding.searchLayout.visibility = View.GONE
+                where = "SCRAP"
                 Log.d("TAGsearch", "onViewCreated: ${this.arguments}")
             }
+
+            if (this.requireArguments().getString("mypage") == "applied"){
+                where = "APPLIED"
+            }
+
         } else {
             where = "SEARCH"
         }
@@ -72,7 +80,13 @@ class SearchFragment : Fragment() {
             rvSearch.apply {
                 layoutManager = LinearLayoutManager(context)
             }
-            search = prefs.getString("myType")
+
+            if (prefs.getStringList("myType") != null){
+                val firstType: EnumExamType = prefs.getStringList("myType")!![0]
+                search = firstType.type
+            }
+
+            isData = true
         }
 
     }
@@ -82,20 +96,31 @@ class SearchFragment : Fragment() {
             viewLifecycleOwner,
             Observer {
                 mSearchAdapter.list = it
-                getScraps(it)
+                getFilterData(it)
+                binding.isData = mSearchAdapter.itemCount != 0
             }
         )
     }
 
-    private fun getScraps(it : MutableList<WorkModel>){
-        if (where == "MYPAGE") {
-            mSearchAdapter.list = it.filter {
-                it.isLike == true
-            } as MutableList<WorkModel>
-            mSearchAdapter.notifyDataSetChanged()
-
-            Log.d("TAGsearch", "getScraps: ${mSearchAdapter.list}")
+    private fun getFilterData(works : MutableList<WorkModel>){
+        when (where) {
+            "SCRAP" -> {
+                mSearchAdapter.list = works.filter {
+                    it.isLike == true
+                } as MutableList<WorkModel>
+            }
+            "APPLIED" -> {
+                mSearchAdapter.list = works.filter {
+                    it.isApply == true
+                } as MutableList<WorkModel>
+            }
+            else -> {
+                mSearchAdapter.list = works
+            }
         }
+        mSearchAdapter.notifyDataSetChanged()
     }
+
+
 
 }
