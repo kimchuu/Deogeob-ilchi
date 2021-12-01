@@ -15,6 +15,9 @@ class LoginActivity : BaseActivity() {
             logo.setOnClickListener {
                 gotoTest()
             }
+            skipBtn.setOnClickListener {
+                gotoTest()
+            }
         }
     }
 
